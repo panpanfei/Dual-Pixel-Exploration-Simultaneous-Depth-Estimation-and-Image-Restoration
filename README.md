@@ -11,5 +11,6 @@ title = {Dual Pixel Exploration: Simultaneous Depth Estimation and Image Restora
 booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},   
 month = {June},   
 year = {2021},  
-pages = {4340-4349} }
+pages = {4340-4349} 
+}
 </pre>
