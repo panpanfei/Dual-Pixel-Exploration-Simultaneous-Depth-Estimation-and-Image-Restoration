@@ -13,18 +13,19 @@ pages = {4340-4349} }
 %% camera para
 % mm
 f=35/1e3; 
-% focal length in number of pixels raise raise
+% focal length in number of pixels 
 f_pix=3000;   
 % aperture size in grid of pixels
 aperture_size=floor(f_pix/2);   
 %focald
 Fd = 5;
-% sacle for depth range
+% scale for depth range
 scaled = 0.2; 
 % crop image boundary
 crop = 20; 
 %resize
 newsize = [480,640];
+
 %% load data
 img_name = imread('./input.png');
 RGB_img = im2double(img_name);
@@ -34,6 +35,9 @@ depth_in = depth_name.depths/scaled;
 
 %% depth -> disp
 disp = scaledepth(depth_in,f_pix,f,Fd,aperture_size);
+
+% manually control focusing area,1 for foreground 0 for background
+% disp = scaledepth_m(depth_in,f_pix,f,Fd,aperture_size,0);
 
 %% simulator
 [img_left,img_right] = generatedpimage(RGB_img,disp);
