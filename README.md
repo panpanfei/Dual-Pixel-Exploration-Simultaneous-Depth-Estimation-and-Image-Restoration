@@ -14,3 +14,23 @@ year = {2021},
 pages = {4340-4349} 
 }
 </pre>
+
+How to use - DATASET
+----------------
+The codes are tested in MATLAB 2020a (64bit) under ubuntu 20.04 LTS 64bit version.
+
+1. Download the [NYU dataset](https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html).
+2. Run "simulator_dp_nyu_trainingdata.m" and "simulator_dp_nyu_testingdata.m" to get the training and testing set.  
+
+
+How to use - DDDNet
+----------------
+Coming soon
+
+
+Notes 
+----------------
+Should you have any questions regarding this code and the corresponding results, please contact Liyuan.Pan@anu.edu.au
+
+
+
