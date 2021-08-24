@@ -65,21 +65,17 @@ for idx = 1:2
         % disp = scaledepth_m(depth_in,f_pix,f,Fd,aperture_size,0);
         
         %% simulator
-        [img_left,img_right,disp_left] = generatedpimage(RGB_img,disp);
+        [img_left,img_right] = generatedpimage(RGB_img,disp);
         
         %% resize and save
         img_left = imresize(img_left(crop:end-crop,crop:end-crop,:), newsize);
         img_right = imresize(img_right(crop:end-crop,crop:end-crop,:), newsize);
         RGB_img = imresize(RGB_img(crop:end-crop,crop:end-crop,:), newsize);
-        disp_left = imresize(disp_left(crop:end-crop,crop:end-crop), newsize);
         disp = imresize(disp(crop:end-crop,crop:end-crop), newsize);
         %
         idxi = 5000;
         filename = [datapath dataset sprintf('disp/%04d_dm.pfm',img_number+idxi)];
         pfmwrite(disp, filename);
-        
-        filename = [datapath dataset sprintf('disp/%04d_dl.pfm',img_number+idxi)];
-        pfmwrite(single(disp_left), filename);
         
         filename = [datapath dataset sprintf('dp/%04d_l.png',img_number+idxi)];
         imwrite(img_left, filename);
