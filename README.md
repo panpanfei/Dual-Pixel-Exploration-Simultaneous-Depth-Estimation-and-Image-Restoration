@@ -25,7 +25,8 @@ The codes are tested in MATLAB 2020a (64bit) under ubuntu 20.04 LTS 64bit versio
 
 How to use - DDDNet
 ----------------
-Coming soon
+1. Make sure the '--input_test_file' is the right loop.
+2. Run 'dual_pixel_test.py' and 'dual_pixel_test_MB.py' to get the result of our-sys and DPD-blur dataset.
 
 
 Notes 
