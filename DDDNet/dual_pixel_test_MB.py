@@ -22,13 +22,7 @@ import skimage
 
 
 parser = argparse.ArgumentParser(description="DDD Network")
-parser.add_argument("-e","--epochs",type = int, default = 2600)
-parser.add_argument("-se","--start_epoch",type = int, default = 0)
-parser.add_argument("-b","--batchsize",type = int, default = 1)
-parser.add_argument("-s","--imagesize",type = int, default = 256)
-parser.add_argument("-l","--learning_rate", type = float, default = 0.0001)
 parser.add_argument("-g","--gpu",type=int, default=1)
-parser.add_argument("-alpha","--alpha",type=float, default=0)
 parser.add_argument('-im', '--img_list', type=str, default ="./data/dpd_test.txt")
 parser.add_argument('-t', '--input_test_file', type=str, default ="../../../data/dd_dp_dataset_png/")
 parser.add_argument('-o', '--output_file', type=str, default ="test_results/DPD/")
