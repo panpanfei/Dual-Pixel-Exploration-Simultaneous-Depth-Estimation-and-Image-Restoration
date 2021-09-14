@@ -22,20 +22,14 @@ from tqdm import tqdm
 
 
 parser = argparse.ArgumentParser(description="DDD")
-parser.add_argument('--epochs',type = int, default = 150)
 parser.add_argument('--start_epoch',type = int, default = 1)
 parser.add_argument('--batchsize',type = int, default = 8)
-parser.add_argument('--imagesize',type = int, default = 384)
-parser.add_argument('--learning_rate', type = float, default = 0.0001)
 parser.add_argument('--gpu',type=int, default=4)
 parser.add_argument('--input_test_file', type=str, default ="../../../data/simudata/NYU/")
 parser.add_argument('--img_list_t', type=str, default ="./data/nyu_test.txt")
 parser.add_argument('--output_file', type=str, default ="test_results/DDDsys/")
-parser.add_argument('--maxdisp', type=int, default=12, help='maxium disparity')
 parser.add_argument('--modelname', type=str, default = "model_nyu", help="model_nyu")
 parser.add_argument('--workers', type=int, help='number of data loading workers', default=1)
-parser.add_argument('--reblur',type=int, default=0, help='if reblur')
-parser.add_argument('--trainortest',type=int, default=0, help='if train')
 args = parser.parse_args()
 
 
@@ -73,9 +67,9 @@ Estd_stereo.cuda()
 Esti_stereod.cuda()
 
 
-Estd_stereo.load_state_dict(torch.load(str('./checkpoints/' + METHOD + "/Estd" + ".pkl")), strict=False) # 95
+Estd_stereo.load_state_dict(torch.load(str('./checkpoints/' + METHOD + "/Estd" + ".pkl")), strict=False)
 print("ini load Estd " + " success")
-Esti_stereod.load_state_dict(torch.load(str('./checkpoints/' + METHOD + "/Esti" + ".pkl")), strict=False)       #35
+Esti_stereod.load_state_dict(torch.load(str('./checkpoints/' + METHOD + "/Esti" + ".pkl")), strict=False)
 print("ini load Esti " + " success")
   
 
